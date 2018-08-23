@@ -22,8 +22,8 @@
 	</head>
 
 	<body>
-
-		<jsp:include page="head.jsp"></jsp:include>
+<%@ include file="head.jsp"%>
+		<%-- <jsp:include page="head.jsp"></jsp:include> --%>
 
 		<div class="blog-user"></div>
 
@@ -57,9 +57,11 @@
 							</c:forEach>
 						</div>
 					</div>
-
+                               <!-- 文章模块 -->
 					<div class="blog-main-left animated slideInLeft">
 						<div class="flow-default" id="parentArticleList">
+						      <!--   开始 -->
+						   <c:forEach  items="${articles}"  var="article"> 
 							<div class="article shadow animated zoomIn">
 								<div class="article-left ">
 									<img src="img/jzytp.JPG" alt="Tomcat优化性能，JVM优化">
@@ -67,217 +69,22 @@
 								<div class="article-right">
 									<div class="article-title">
 										<span class="article_is_top">置顶</span>&nbsp;<span class="article_is_yc">原创</span>&nbsp;
-										<a href="detail.html">Tomcat优化性能，JVM优化</a>
+										<a href="detail_${ article.articleId}.html">${ article.articleName}</a>
 									</div>
 									<div class="article-abstract">
 										首先在开始之前我们需要知道，在不同的操作系统位数下，（即32位和64位）32位操作系统的JVM会受限于最大2G内存的限制。不管你物理机上有多少内存，JVM只能使用到2G,所</div>
 								</div>
 								<div class="clear"></div>
 								<div class="article-footer">
-									<span><i class="fa fa-clock-o"></i>&nbsp;&nbsp;2018-07-27 09:34:33</span>
+									<span><i class="fa fa-clock-o"></i>&nbsp;&nbsp;${ article.articleTime}</span>
 									<span class="article-author"><i class="fa fa-user"></i>&nbsp;&nbsp;' 听雨·湘潭</span>
 									<span><i class="fa fa-tag"></i>&nbsp;&nbsp;<a href="javascript:classifyList(10);"> Tomcat</a></span>
-									<span class="article-viewinfo"><i class="fa fa-eye"></i>&nbsp;286</span>
+									<span class="article-viewinfo"><i class="fa fa-eye"></i>&nbsp;${ article.articleClick}</span>
 									<span class="article-viewinfo"><i class="fa fa-commenting"></i>&nbsp;3</span>
 								</div>
 							</div>
-							<div class="article shadow animated zoomIn">
-								<div class="article-left ">
-									<img src="img/jzytp.JPG" alt="redis requires Ruby version >= 2.2.2问题">
-								</div>
-								<div class="article-right">
-									<div class="article-title">
-										<span class="article_is_yc">原创</span>&nbsp;
-										<a href="detail.html">redis requires Ruby version &gt;= 2.2.2问题</a>
-									</div>
-									<div class="article-abstract">
-										yum -y install ruby ruby-devel rubygems rpm-build gem install redis 其中&nbsp;gem inst</div>
-								</div>
-								<div class="clear"></div>
-								<div class="article-footer">
-									<span><i class="fa fa-clock-o"></i>&nbsp;&nbsp;2018-08-07 21:32:40</span>
-									<span class="article-author"><i class="fa fa-user"></i>&nbsp;&nbsp;' 听雨·湘潭</span>
-									<span><i class="fa fa-tag"></i>&nbsp;&nbsp;<a href="javascript:classifyList(7);"> Redis</a></span>
-									<span class="article-viewinfo"><i class="fa fa-eye"></i>&nbsp;46</span>
-									<span class="article-viewinfo"><i class="fa fa-commenting"></i>&nbsp;0</span>
-								</div>
-							</div>
-							<div class="article shadow animated zoomIn">
-								<div class="article-left ">
-									<img src="img/jzytp.JPG" alt="Spring Boot 表单验证@Valid">
-								</div>
-								<div class="article-right">
-									<div class="article-title">
-										<span class="article_is_yc">原创</span>&nbsp;
-										<a href="detail.html">Spring Boot 表单验证@Valid</a>
-									</div>
-									<div class="article-abstract">
-										SpringBoot提供了强大的表单验证功能实现，给我们省去了写验证的麻烦； &nbsp; 这里我们给下实例，提交一个有姓名和年龄的表单添加功能， 要求姓名不能为空，
-
-									</div>
-								</div>
-								<div class="clear"></div>
-								<div class="article-footer">
-									<span><i class="fa fa-clock-o"></i>&nbsp;&nbsp;2018-08-01 22:33:28</span>
-									<span class="article-author"><i class="fa fa-user"></i>&nbsp;&nbsp;' 听雨·湘潭</span>
-									<span><i class="fa fa-tag"></i>&nbsp;&nbsp;<a href="javascript:classifyList(5);"> SpringBoot</a></span>
-									<span class="article-viewinfo"><i class="fa fa-eye"></i>&nbsp;83</span>
-									<span class="article-viewinfo"><i class="fa fa-commenting"></i>&nbsp;0</span>
-								</div>
-							</div>
-							<div class="article shadow animated zoomIn">
-								<div class="article-left ">
-									<img src="img/jzytp.JPG" alt="Spring boot 使用 JSP">
-								</div>
-								<div class="article-right">
-									<div class="article-title">
-										<span class="article_is_yc">原创</span>&nbsp;
-										<a href="detail.html">Spring boot 使用 JSP</a>
-									</div>
-									<div class="article-abstract">
-										1、在pom.xml文件中配置依赖项 &lt;!--引入Spring Boot内嵌的Tomcat对JSP的解析包--&gt; &lt;dependency&gt;
-
-									</div>
-								</div>
-								<div class="clear"></div>
-								<div class="article-footer">
-									<span><i class="fa fa-clock-o"></i>&nbsp;&nbsp;2018-07-27 15:33:38</span>
-									<span class="article-author"><i class="fa fa-user"></i>&nbsp;&nbsp;' 听雨·湘潭</span>
-									<span><i class="fa fa-tag"></i>&nbsp;&nbsp;<a href="javascript:classifyList(5);"> SpringBoot</a></span>
-									<span class="article-viewinfo"><i class="fa fa-eye"></i>&nbsp;122</span>
-									<span class="article-viewinfo"><i class="fa fa-commenting"></i>&nbsp;1</span>
-								</div>
-							</div>
-							<div class="article shadow animated zoomIn">
-								<div class="article-left ">
-									<img src="img/jzytp.JPG" alt="Spring boot 下的 Spring mvc">
-								</div>
-								<div class="article-right">
-									<div class="article-title">
-										<span class="article_is_yc">原创</span>&nbsp;
-										<a href="detail.html">Spring boot 下的 Spring mvc</a>
-									</div>
-									<div class="article-abstract">
-										Spring boot下的Spring mvc 和之前的Spring mvc使用是完全一样的： @Controller &nbsp;&nbsp;&nbsp; 即为Spr</div>
-								</div>
-								<div class="clear"></div>
-								<div class="article-footer">
-									<span><i class="fa fa-clock-o"></i>&nbsp;&nbsp;2018-07-27 15:28:35</span>
-									<span class="article-author"><i class="fa fa-user"></i>&nbsp;&nbsp;' 听雨·湘潭</span>
-									<span><i class="fa fa-tag"></i>&nbsp;&nbsp;<a href="javascript:classifyList(5);"> SpringBoot</a></span>
-									<span class="article-viewinfo"><i class="fa fa-eye"></i>&nbsp;35</span>
-									<span class="article-viewinfo"><i class="fa fa-commenting"></i>&nbsp;0</span>
-								</div>
-							</div>
-							<div class="article shadow animated zoomIn">
-								<div class="article-left ">
-									<img src="img/jzytp.JPG" alt="Spring boot 自定义配置">
-								</div>
-								<div class="article-right">
-									<div class="article-title">
-										<span class="article_is_yc">原创</span>&nbsp;
-										<a href="detail.html">Spring boot 自定义配置</a>
-									</div>
-									<div class="article-abstract">
-										配置文件 boot.name=龙旺 boot.sex=男 &nbsp; 1、@Value注解 用于逐个读取自定义的配置，比如： package com.lon</div>
-								</div>
-								<div class="clear"></div>
-								<div class="article-footer">
-									<span><i class="fa fa-clock-o"></i>&nbsp;&nbsp;2018-07-27 15:17:33</span>
-									<span class="article-author"><i class="fa fa-user"></i>&nbsp;&nbsp;' 听雨·湘潭</span>
-									<span><i class="fa fa-tag"></i>&nbsp;&nbsp;<a href="javascript:classifyList(5);"> SpringBoot</a></span>
-									<span class="article-viewinfo"><i class="fa fa-eye"></i>&nbsp;53</span>
-									<span class="article-viewinfo"><i class="fa fa-commenting"></i>&nbsp;0</span>
-								</div>
-							</div>
-							<div class="article shadow animated zoomIn">
-								<div class="article-left ">
-									<img src="img/jzytp.JPG" alt="Spring boot 的核心配置文件">
-								</div>
-								<div class="article-right">
-									<div class="article-title">
-										<span class="article_is_yc">原创</span>&nbsp;
-										<a href="detail.html">Spring boot 的核心配置文件</a>
-									</div>
-									<div class="article-abstract">
-										1、.properties文件 &nbsp;&nbsp;&nbsp;&nbsp; 键值对的properties属性文件配置方式 &nbsp;&nbsp;&nbsp;&amp;n
-
-									</div>
-								</div>
-								<div class="clear"></div>
-								<div class="article-footer">
-									<span><i class="fa fa-clock-o"></i>&nbsp;&nbsp;2018-07-27 15:09:26</span>
-									<span class="article-author"><i class="fa fa-user"></i>&nbsp;&nbsp;' 听雨·湘潭</span>
-									<span><i class="fa fa-tag"></i>&nbsp;&nbsp;<a href="javascript:classifyList(5);"> SpringBoot</a></span>
-									<span class="article-viewinfo"><i class="fa fa-eye"></i>&nbsp;69</span>
-									<span class="article-viewinfo"><i class="fa fa-commenting"></i>&nbsp;2</span>
-								</div>
-							</div>
-							<div class="article shadow animated zoomIn">
-								<div class="article-left ">
-									<img src="img/jzytp.JPG" alt="第一个 Spring boot 程序及解析">
-								</div>
-								<div class="article-right">
-									<div class="article-title">
-										<span class="article_is_yc">原创</span>&nbsp;
-										<a href="detail.html">第一个 Spring boot 程序及解析</a>
-									</div>
-									<div class="article-abstract">
-										1、创建一个Spring boot项目； &nbsp;&nbsp;&nbsp;&nbsp; 1、可以采用方式一： 使用 eclipse 的 Spring Tool Sui</div>
-								</div>
-								<div class="clear"></div>
-								<div class="article-footer">
-									<span><i class="fa fa-clock-o"></i>&nbsp;&nbsp;2018-07-27 15:02:06</span>
-									<span class="article-author"><i class="fa fa-user"></i>&nbsp;&nbsp;' 听雨·湘潭</span>
-									<span><i class="fa fa-tag"></i>&nbsp;&nbsp;<a href="javascript:classifyList(5);"> SpringBoot</a></span>
-									<span class="article-viewinfo"><i class="fa fa-eye"></i>&nbsp;45</span>
-									<span class="article-viewinfo"><i class="fa fa-commenting"></i>&nbsp;0</span>
-								</div>
-							</div>
-							<div class="article shadow animated zoomIn">
-								<div class="article-left ">
-									<img src="img/jzytp.JPG" alt="Spring boot 开发环境">
-								</div>
-								<div class="article-right">
-									<div class="article-title">
-										<span class="article_is_yc">原创</span>&nbsp;
-										<a href="detail.html">Spring boot 开发环境</a>
-									</div>
-									<div class="article-abstract">
-										springboot开发环境及工具推荐： 1、推荐使用Spring boot最新版本，目前 Spring Boot 最新正式版为2.0.3.RELEASE； 2、如果是
-
-									</div>
-								</div>
-								<div class="clear"></div>
-								<div class="article-footer">
-									<span><i class="fa fa-clock-o"></i>&nbsp;&nbsp;2018-07-27 14:56:21</span>
-									<span class="article-author"><i class="fa fa-user"></i>&nbsp;&nbsp;' 听雨·湘潭</span>
-									<span><i class="fa fa-tag"></i>&nbsp;&nbsp;<a href="javascript:classifyList(5);"> SpringBoot</a></span>
-									<span class="article-viewinfo"><i class="fa fa-eye"></i>&nbsp;56</span>
-									<span class="article-viewinfo"><i class="fa fa-commenting"></i>&nbsp;0</span>
-								</div>
-							</div>
-							<div class="article shadow animated zoomIn">
-								<div class="article-left ">
-									<img src="img/jzytp.JPG" alt="SpringBoot简介">
-								</div>
-								<div class="article-right">
-									<div class="article-title">
-										<span class="article_is_yc">原创</span>&nbsp;
-										<a href="detail.html">SpringBoot简介</a>
-									</div>
-									<div class="article-abstract">
-										Spring Boot是由Pivotal团队提供的全新框架，其设计目的是用来简化新Spring应用的初始搭建以及开发过程。该框架使用了特定的方式来进行配置，从而使开发人员不</div>
-								</div>
-								<div class="clear"></div>
-								<div class="article-footer">
-									<span><i class="fa fa-clock-o"></i>&nbsp;&nbsp;2018-07-27 14:48:27</span>
-									<span class="article-author"><i class="fa fa-user"></i>&nbsp;&nbsp;' 听雨·湘潭</span>
-									<span><i class="fa fa-tag"></i>&nbsp;&nbsp;<a href="javascript:classifyList(5);"> SpringBoot</a></span>
-									<span class="article-viewinfo"><i class="fa fa-eye"></i>&nbsp;37</span>
-									<span class="article-viewinfo"><i class="fa fa-commenting"></i>&nbsp;0</span>
-								</div>
-							</div>
+							</c:forEach>
+						<!-- 	结束 -->
 							<div class="layui-flow-more">
 								<a href="javascript:;"><cite>加载更多</cite></a>
 							</div>
@@ -573,7 +380,7 @@
 						</div>
 
 						<div class="blog-module shadow animated fadeInRight">
-							<div class="blog-module-title"><i class="fa fa-link"></i>&nbsp;友情链接</div>
+							<div class="blog-module-title"><i class="fa fa-link"></i>&nbsp;其他</div>
 							<ul class="blogroll">
 								<li>
 									<a target="_blank" href="http://wurao.xin" title="勿扰博客">勿扰博客</a>
@@ -592,13 +399,7 @@
 			</div>
 		</div>
 
-		<footer id="f" class="blog-footer">
-			<p><span>Copyright</span><span>©</span><span>2018</span>
-				<a href="http://www.long225.cn">Long博客</a><span>Design By Longwang</span></p>
-			<p>
-				<a href="http://www.miitbeian.gov.cn" target="_blank">湘ICP备18010289号</a>
-			</p>
-		</footer>
+		<%@ include file="footer.jsp"%>
 
 		<ul class="layui-nav layui-nav-tree layui-nav-side blog-nav-left layui-hide" lay-filter="nav">
 			<li class="layui-nav-item">

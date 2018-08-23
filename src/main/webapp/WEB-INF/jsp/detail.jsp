@@ -25,39 +25,7 @@
 
 	<body>
 
-		<nav id="h" class="blog-nav layui-header">
-			<div class="blog-container">
-
-				<a href="/QQ/qqLogin" class="blog-user">
-					<i class="fa fa-qq"></i>
-				</a>
-
-				<a class="blog-logo" href="index.html">Long</a>
-
-				<ul class="layui-nav" lay-filter="nav">
-					<li class="layui-nav-item">
-						<a href="index.html"><i class="fa fa-home fa-fw"></i>&nbsp;网站首页</a>
-					</li>
-					<li class="layui-nav-item">
-						<a href="article.html"><i class="fa fa-file-text fa-fw"></i>&nbsp;文章专栏</a>
-					</li>
-					<li class="layui-nav-item">
-						<a href="mixed_pic.html"><i class="fa fa-paper-plane-o fa-fw"></i>&nbsp;杂七杂八</a>
-					</li>
-					<li class="layui-nav-item">
-						<a href="timeline.html"><i class="fa fa-hourglass-half fa-fw"></i>&nbsp;点点滴滴</a>
-					</li>
-					<li class="layui-nav-item">
-						<a href="about.html"><i class="fa fa-info fa-fw"></i>&nbsp;关于本站</a>
-					</li>
-					<span class="layui-nav-bar"></span></ul>
-
-				<a class="blog-navicon" href="javascript:;">
-					<i class="fa fa-navicon"></i>
-				</a>
-			</div>
-		</nav>
-
+		<jsp:include page="head.jsp"></jsp:include>
 		<div class="blog-body">
 
 			<div class="blog-container">
@@ -65,21 +33,21 @@
 					<blockquote class="layui-elem-quote sitemap layui-breadcrumb shadow" style="visibility: visible;">
 						<a href="index.html" title="网站首页">网站首页<span class="layui-box">&gt;</span></a>
 						<a href="article.html" title="文章专栏">文章专栏<span class="layui-box">&gt;</span></a>
-						<a><cite class="title">Spring boot 的核心配置文件</cite></a>
+						<a><cite class="title">${article.articleName }</cite></a>
 					</blockquote>
 					<div class="blog-main">
 
 						<div id="parentArticleList" class="blog-main-left animated slideInLeft">
 
 							<div class="article-detail shadow">
-								<div class="article-detail-title title">Spring boot 的核心配置文件</div>
+								<div class="article-detail-title title">${article.articleName }</div>
 								<div class="article-detail-info">
-									<span>编辑时间：2018-07-27 15:09:26.0</span>
-									<span>作者：听雨·湘潭</span>
-									<span>浏览量：71</span>
+									<span>编辑时间：${article.articleTime }</span>
+									<span>作者：${article.userId }</span>
+									<span>浏览量：${article.articleClick }</span>
 								</div>
 								<div id="articleContent" style="overflow: hidden;" class="article-detail-content">
-									<p>在主配置文件中设置：spring.profiles.active=product</p>
+									<p>${article.articleContent }</p>
 								</div>
 							</div>
 
